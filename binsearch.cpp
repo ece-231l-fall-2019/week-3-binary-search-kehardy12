@@ -16,10 +16,11 @@ bool binarySearch(const std::vector<int>& set, int value)
 			return true;
 		}
 		if (set[mid] > value){
-			mid = left;
+			right = mid;
 		}
-		if (set[mid] < value){
-			mid = left + 1;
+		else
+		{
+			left = mid + 1;
 		}
 	}
 	return false;
@@ -43,5 +44,6 @@ bool binarySearch(const int *begin, const int *end, int value)
 	else 
 		begin = mid + 1;
 	}
+
 	return false;
 }
