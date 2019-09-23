@@ -4,6 +4,7 @@
 #include <string>
 #include "Timer.h"
 #include "search.h"
+#include "sort.h"
 
 void renumbers(std::string filename, std::vector<int>& c)
 {
@@ -95,6 +96,35 @@ int main()
 	}
 	// TODO:
 	// repeat the above two blocks but use the binary search functions.
+
+	//{
+	//	Timer timer("Time to binary search all values while using recursion: ");
+
+	//	binarySearchrecursive(numbers.data(), numbers.data() + numbers.size(),
+	//				search[i]);
+
+	//	std::cout << "Found "<< search[i] << "/"
+	//		<< search.size() << " values." << std::endl;
+	//}
+	//{
+	//	Timer timer("Time to binary recursive search all values (pointers): ");
+
+	//	int found = 0;
+	//	for (size_t i = 0; i < search.size(); i++)
+	//	{
+	//		if (binarySearchrecursive(numbers.data(), numbers.data() + numbers.size(),
+	//				search[i]))
+	//			found++;
+	//	}
+
+	//	std::cout << "Found "<< found << "/"
+	//		<< search.size() << " values." << std::endl;
+	//	
+	bubblesort (search.data(), search.data() + search.size());
+	for (unsigned int i = 0; i < search.size(); i++)
+	{
+		std::cout << search[i] << std::endl;
+	}
 
 	return 0;
 }

@@ -31,7 +31,7 @@ bool binarySearch(const int *begin, const int *end, int value)
 	{	
 	const int *mid = begin + (end - begin)/2;
 	
-	if (*mid == *end){
+	if (mid == end){
 		return false;
 	}
 	if (*mid == value)
@@ -47,3 +47,27 @@ bool binarySearch(const int *begin, const int *end, int value)
 
 	return false;
 }
+
+bool binarySearchrecursive(const int *begin, const int *end, int value)
+{
+	{	
+	const int *mid = begin + (end - begin)/2;
+	
+	if ((begin > end) || (begin == end)){
+		return false;
+	}
+	if (*mid == value)
+	{
+		return true;
+	}
+	if (*mid > value){
+		return binarySearchrecursive(begin, mid, value);
+	}
+	else 
+		return binarySearchrecursive(mid + 1, end, value);
+	}
+
+	return false;
+
+}
+
